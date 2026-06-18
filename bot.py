@@ -794,13 +794,9 @@ def search_text(message):
 print("СТАРТ POLLING")
 
 try:
-    bot.infinity_polling(
-        timeout=60,
-        long_polling_timeout=60,
-        skip_pending=True
-    )
+    bot.infinity_polling()
 except Exception as e:
     print("ОШИБКА POLLING:")
-    print(e)
+    print(repr(e))
 
 print("КОД ДОШЕЛ ДО КОНЦА ФАЙЛА")
