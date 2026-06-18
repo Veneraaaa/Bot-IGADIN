@@ -814,8 +814,11 @@ time.sleep(2)
 
 print("Перед polling")
 
+print("Перед polling")
+
 while True:
-     print("Зашли в while")
+    print("Зашли в while")
+
     try:
         print("Запуск polling...")
         bot.infinity_polling(
@@ -823,6 +826,7 @@ while True:
             long_polling_timeout=60,
             skip_pending=True
         )
+
     except Exception as e:
         print("ОШИБКА:")
         print(e)
