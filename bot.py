@@ -802,9 +802,7 @@ def search_text(message):
             "Ничего не найдено"
         )
 
-print("Бот запущен...")
-
-import time
+print("До remove_webhook")
 
 try:
     bot.remove_webhook()
@@ -812,9 +810,9 @@ try:
 except Exception as e:
     print("Ошибка удаления webhook:", e)
 
-time.sleep(2)
+print("После remove_webhook")
 
-print("Перед polling")
+time.sleep(2)
 
 print("Перед polling")
 
