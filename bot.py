@@ -813,11 +813,6 @@ except Exception as e:
 
 print("После remove_webhook")
 
-print("ПЕРЕД POLLING")
-
-bot.infinity_polling()
-
-print("После remove_webhook")
 print("Перед polling")
 
 bot.infinity_polling(
