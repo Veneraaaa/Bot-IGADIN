@@ -816,9 +816,15 @@ print("2")
 print("3")
 
 import time
+
+try:
+    bot.remove_webhook()
+    print("Webhook удален")
+except Exception as e:
+    print("Ошибка удаления webhook:", e)
+
 time.sleep(2)
 
-print("4")
 print("Перед polling")
 
 bot.infinity_polling(
@@ -826,9 +832,3 @@ bot.infinity_polling(
     long_polling_timeout=60,
     skip_pending=True
 )
-
-    except Exception as e:
-        print("ОШИБКА:")
-        print(e)
-        traceback.print_exc()
-        time.sleep(15)
