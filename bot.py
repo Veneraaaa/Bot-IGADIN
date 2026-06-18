@@ -821,11 +821,6 @@ time.sleep(2)
 print("4")
 print("Перед polling")
 
-while True:
-    print("Зашли в while")
-
-    try:
-        print("Запуск polling...")
         bot.infinity_polling(
             timeout=60,
             long_polling_timeout=60,
