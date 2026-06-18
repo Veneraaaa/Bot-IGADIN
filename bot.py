@@ -791,15 +791,21 @@ def search_text(message):
 
 print("Бот запущен...")
 
+print("Бот запущен...")
+
 import time
+import traceback
 
 while True:
     try:
+        print("Запуск polling...")
         bot.infinity_polling(
             timeout=60,
             long_polling_timeout=60,
             skip_pending=True
         )
     except Exception as e:
-        print(f"Ошибка: {e}")
+        print("ОШИБКА:")
+        print(e)
+        traceback.print_exc()
         time.sleep(15)
