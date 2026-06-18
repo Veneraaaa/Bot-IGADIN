@@ -809,22 +809,15 @@ try:
     bot.remove_webhook()
     print("Webhook удален")
 except Exception as e:
-    print("Ошибка удаления webhook:", e)
+    print("Ошибка:", e)
 
-print("1")
-print("2")
-print("3")
+print("После remove_webhook")
 
-import time
+print("ПЕРЕД POLLING")
 
-try:
-    bot.remove_webhook()
-    print("Webhook удален")
-except Exception as e:
-    print("Ошибка удаления webhook:", e)
+bot.infinity_polling()
 
-time.sleep(2)
-
+print("После remove_webhook")
 print("Перед polling")
 
 bot.infinity_polling(
