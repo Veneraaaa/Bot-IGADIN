@@ -818,6 +818,13 @@ print("222")
 print("333")
 print("Перед polling")
 
+import time
+
+print("Жду 30 секунд...")
+time.sleep(30)
+
+print("Старт polling")
+
 bot.infinity_polling(
     timeout=60,
     long_polling_timeout=60,
