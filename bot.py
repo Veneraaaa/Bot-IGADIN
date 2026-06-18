@@ -806,15 +806,6 @@ def search_text(message):
 
 print("Перед polling")
 
-import time
+print("ПЕРЕД POLLING")
 
-print("Жду 30 секунд...")
-time.sleep(30)
-
-print("Старт polling")
-
-bot.infinity_polling(
-    timeout=60,
-    long_polling_timeout=60,
-    skip_pending=True
-)
+bot.infinity_polling()
