@@ -791,10 +791,16 @@ def search_text(message):
             "Ничего не найдено"
         )
 
-print("ПЕРЕД POLLING")
+print("СТАРТ POLLING")
 
-bot.infinity_polling(
-    timeout=60,
-    long_polling_timeout=60,
-    skip_pending=True
-)
+try:
+    bot.infinity_polling(
+        timeout=60,
+        long_polling_timeout=60,
+        skip_pending=True
+    )
+except Exception as e:
+    print("ОШИБКА POLLING:")
+    print(e)
+
+print("КОД ДОШЕЛ ДО КОНЦА ФАЙЛА")
