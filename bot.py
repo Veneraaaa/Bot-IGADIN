@@ -47,6 +47,8 @@ def run_web():
 
 Thread(target=run_web).start()
 
+print("ПОСЛЕ Thread.start()")
+
 
 @bot.message_handler(commands=['start'])
 def start(message):
