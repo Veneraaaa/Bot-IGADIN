@@ -813,7 +813,9 @@ except Exception as e:
     print("Ошибка:", e)
 
 print("После remove_webhook")
-
+print("111")
+print("222")
+print("333")
 print("Перед polling")
 
 bot.infinity_polling(
