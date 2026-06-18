@@ -39,20 +39,7 @@ project_cards = {}
 tender_cards = {}
 search_mode = set()
 
-app = Flask(__name__)
-
-@app.route("/")
-def home():
-    return "Bot is running"
-
-def run_web():
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
-
-Thread(target=run_web).start()
-
-print("ПОСЛЕ Thread.start()")
-
+print("FLASK ОТКЛЮЧЕН")
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -804,8 +791,10 @@ def search_text(message):
             "Ничего не найдено"
         )
 
-print("Перед polling")
-
 print("ПЕРЕД POLLING")
 
-bot.infinity_polling()
+bot.infinity_polling(
+    timeout=60,
+    long_polling_timeout=60,
+    skip_pending=True
+)
