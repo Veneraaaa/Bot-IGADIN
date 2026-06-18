@@ -17,6 +17,8 @@ PROJECTS_BOARD_ID = "68f71a3958dcce5edf3d06f1"
 
 bot = telebot.TeleBot(TOKEN)
 
+print("ВЕРСИЯ 18 ИЮНЯ 2026")
+
 try:
     bot.remove_webhook()
     print("Webhook удален")
