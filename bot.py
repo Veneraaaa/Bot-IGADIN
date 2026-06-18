@@ -811,10 +811,14 @@ try:
 except Exception as e:
     print("Ошибка удаления webhook:", e)
 
-print("После remove_webhook")
+print("1")
+print("2")
+print("3")
 
+import time
 time.sleep(2)
 
+print("4")
 print("Перед polling")
 
 while True:
