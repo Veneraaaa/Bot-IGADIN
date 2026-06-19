@@ -18,16 +18,15 @@ PROJECTS_BOARD_ID = "68f71a3958dcce5edf3d06f1"
 
 bot = telebot.TeleBot(TOKEN)
 
-print("TOKEN =", TOKEN[:10])
 print("BOT =", bot.get_me().username)
 
 try:
-    bot.remove_webhook()
-    print("Webhook удален")
+    updates = bot.get_updates(timeout=1)
+    print("GET_UPDATES OK")
+    print("COUNT =", len(updates))
 except Exception as e:
-    print("Ошибка удаления webhook:", e)
-
-print("Создали объект бота")
+    print("GET_UPDATES ERROR:")
+    print(repr(e))
 
 try:
     me = bot.get_me()
@@ -793,10 +792,14 @@ def search_text(message):
 
 print("СТАРТ POLLING")
 
-try:
-    bot.infinity_polling()
-except Exception as e:
-    print("ОШИБКА POLLING:")
-    print(repr(e))
-
-print("КОД ДОШЕЛ ДО КОНЦА ФАЙЛА")
+while True:
+    try:
+        bot.infinity_polling(
+            timeout=60,
+            long_polling_timeout=60,
+            skip_pending=True
+        )
+    except Exception as e:
+        print("ОШИБКА POLLING:")
+        print(repr(e))
+        time.sleep(15)
