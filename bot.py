@@ -38,7 +38,19 @@ project_cards = {}
 tender_cards = {}
 search_mode = set()
 
-print("FLASK ОТКЛЮЧЕН")
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is running"
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
+Thread(target=run_web).start()
+
+print("FLASK ЗАПУЩЕН")
 
 @bot.message_handler(commands=['start'])
 def start(message):
